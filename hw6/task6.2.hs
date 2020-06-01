@@ -5,23 +5,6 @@ data BSTree a = Nil
               | Node {val :: a, left :: BSTree a, right :: BSTree a}
                 deriving Show
 
-{--add :: (Ord a, Show a) => a -> State (BSTree a) (BSTree a)
-add val = do
-    tree <- get
-    case tree of
-        Nil -> do
-            put (Node val Nil Nil)
-            return (Node val Nil Nil)
-        (Node y left right) -> case (val <= y) of
-                True -> do
-                    let (state, leftTree) = runState (add val) left
-                    put (Node y leftTree right)
-                    return state
-                otherwise -> do
-                    let (state, rightTree) = runState (add val) right
-                    put (Node y left rightTree)
-                    return state--}
-
 add :: (Ord a) => a -> BSTree a -> BSTree a
 add x Nil = Node x Nil Nil
 add x (Node y left right)
