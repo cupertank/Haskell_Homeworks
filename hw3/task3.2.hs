@@ -1,4 +1,4 @@
-kek = kek where
-	kek0 = 0:kek
-	kek1 = concatMap (\x -> replicate 3 (x * 10)) kek0
-	kek = zipWith (+) kek1 (cycle [1, 7, 9])
+genList = gen where
+	  gen0 = 0:gen
+	  gen1 = concatMap (\x -> replicate 3 (x * 10)) gen0
+	  gen = zipWith (+) gen1 (cycle [1, 7, 9])
