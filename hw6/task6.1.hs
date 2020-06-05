@@ -5,15 +5,10 @@ data Member = Member { degree :: Int,  index :: Int}
 type Polynom = [Member]
 
 instance Show Member where
-    --showsPrec _ mem = showString (show mem)
-
     show (Member 0 index) = show index
     show (Member 1 index) = show index ++ "*x"
     show mem = show (index mem) ++ "*x^"  ++ show (degree mem)
 
-    -- showList [] = showChar 'c'ЫЫ
-    -- showList (Member _ 0:xs) = shows xs 
-    -- showList (x:xs) = shows x . showChar '+' . shows xs
     showList [] = (++ "")
     showList (x:[]) = (++ show x)
     showList (x:xs) = (++ show x ++ "+" ++ show xs)
