@@ -1,8 +1,8 @@
 first :: [Int] -> Int
-first x = sum (map (\i -> if even i then 1 else 0) x)
+first = sum . map (\i -> if even i then 1 else 0)
 
 second :: [Int] -> Int
-second x = length (filter even x)
+second = length . filter even
 
 third :: [Int] -> Int
 third = foldr (\i acc -> if even i then acc + 1 else acc) 0 
