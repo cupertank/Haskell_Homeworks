@@ -10,9 +10,5 @@ bracketHelper (char:other) stack
             bracketHelper other (tail stack)
         else
             False
-    -- | char == ')' && head stack == 1 ||
-    --   char == ']' && head stack == 2 ||
-    --   char == '}' && head stack == 3 = bracketHelper other (tail stack)
-    -- | otherwise = False
 
 bracketHelper "" stack = (length stack) == 0
